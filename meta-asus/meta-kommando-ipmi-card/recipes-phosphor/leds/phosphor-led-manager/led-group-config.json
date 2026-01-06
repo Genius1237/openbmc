@@ -1,0 +1,40 @@
+{
+    "leds": [
+        {
+            "group" : "bmc_booted",
+            "members" : [
+                {
+                    "Name" : "heartbeat_green",
+                    "Action" : "Blink",
+                    "DutyOn" : 50,
+                    "Period" : 0,
+                    "Priority": "On"
+                }
+            ]
+        },
+        {
+            "group": "system_fault",
+            "members": [
+                {
+                    "Name": "panic_amber",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "On"
+                }
+            ]
+        },
+        {
+            "group": "enclosure_identify",
+            "members": [
+                {
+                    "Name": "heartbeat_green",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 1000,
+                    "Priority": "On"
+                }
+            ]
+        }
+    ]
+}
