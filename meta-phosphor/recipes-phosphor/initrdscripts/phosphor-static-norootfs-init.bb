@@ -36,6 +36,7 @@ NOROOTFS_PERSISTENT_DIRS = "\
     etc \
     home \
     ${@ bb.utils.contains('ROOT_HOME', '/home/root', '', d.getVar('ROOT_HOME')[1:], d)} \
+    var/configuration \
     "
 
 inherit allarch
