@@ -1,0 +1,45 @@
+From a99a09b230c7c4c2766d069fb8f9b6de4438f977 Mon Sep 17 00:00:00 2001
+From: Anirudh Srinivasan <anirudhsriniv@gmail.com>
+Date: Mon, 12 Jan 2026 15:25:04 -0600
+Subject: [PATCH 3/3] ARM: dts: aspeed: Re-add ethernet nodes back to asus ipmi
+ expansion card
+
+Upstream-Status: Pending
+
+---
+ .../aspeed-bmc-asus-ipmi-expansion-card.dts   | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+diff --git a/arch/arm/boot/dts/aspeed/aspeed-bmc-asus-ipmi-expansion-card.dts b/arch/arm/boot/dts/aspeed/aspeed-bmc-asus-ipmi-expansion-card.dts
+index 4de9c3f6dab5..cc738012ef11 100644
+--- a/arch/arm/boot/dts/aspeed/aspeed-bmc-asus-ipmi-expansion-card.dts
++++ b/arch/arm/boot/dts/aspeed/aspeed-bmc-asus-ipmi-expansion-card.dts
+@@ -108,6 +108,25 @@ &gpio1 {
+ 	/*18E0 32*/ "","","","","","","","";
+ };
+ 
++&mdio2 {
++       status = "okay";
++
++       ethphy2: ethernet-phy@0 {
++               compatible = "ethernet-phy-ieee802.3-c22";
++               reg = <0>;
++       };
++};
++
++&mac2 {
++       status = "okay";
++
++       /* Bootloader sets up the MAC to insert delay */
++       phy-mode = "rgmii";
++       phy-handle = <&ethphy2>;
++       pinctrl-names = "default";
++       pinctrl-0 = <&pinctrl_rgmii3_default>;
++};
++
+ &vhub {
+ 	status = "okay";
+ };
+-- 
+2.52.0
+
