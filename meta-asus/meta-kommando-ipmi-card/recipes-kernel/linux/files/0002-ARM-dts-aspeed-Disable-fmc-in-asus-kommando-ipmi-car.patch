@@ -1,0 +1,34 @@
+From 0597fe3e7ee31e14205a9a5fe63bff0f5dd11691 Mon Sep 17 00:00:00 2001
+From: Anirudh Srinivasan <anirudhsriniv@gmail.com>
+Date: Sat, 28 Feb 2026 11:18:16 -0600
+Subject: [PATCH 2/2] ARM: dts: aspeed: Disable fmc in asus kommando ipmi card
+
+Upstream-Status: Inappropriate [for testing only]
+---
+ .../dts/aspeed/aspeed-bmc-asus-kommando-ipmi-card.dts  | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+
+diff --git a/arch/arm/boot/dts/aspeed/aspeed-bmc-asus-kommando-ipmi-card.dts b/arch/arm/boot/dts/aspeed/aspeed-bmc-asus-kommando-ipmi-card.dts
+index 58823226e74a..611b9623493e 100644
+--- a/arch/arm/boot/dts/aspeed/aspeed-bmc-asus-kommando-ipmi-card.dts
++++ b/arch/arm/boot/dts/aspeed/aspeed-bmc-asus-kommando-ipmi-card.dts
+@@ -57,15 +57,7 @@ video_engine_memory: video {
+ };
+ 
+ &fmc {
+-	status = "okay";
+-
+-	flash@0 {
+-		status = "okay";
+-		m25p,fast-read;
+-		label = "bmc";
+-		spi-max-frequency = <50000000>;
+-#include "openbmc-flash-layout-64.dtsi"
+-	};
++	status = "disabled";
+ };
+ 
+ &gpio0 {
+-- 
+2.52.0
+

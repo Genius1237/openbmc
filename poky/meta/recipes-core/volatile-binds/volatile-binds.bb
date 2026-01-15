@@ -20,6 +20,7 @@ VOLATILE_BINDS ?= "\
     ${localstatedir}/volatile/cache ${localstatedir}/cache\n\
     ${localstatedir}/volatile/spool ${localstatedir}/spool\n\
     ${localstatedir}/volatile/srv /srv\n\
+    ${localstatedir}/volatile/configuration ${localstatedir}/configuration\n\
 "
 VOLATILE_BINDS[type] = "list"
 VOLATILE_BINDS[separator] = "\n"
