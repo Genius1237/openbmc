@@ -7,4 +7,5 @@ SRC_URI += " \
     file://0003-clk-aspeed-Add-reset-for-HACE-VIDEO.patch \
     file://0004-ARM-dts-aspeed-g5-Add-reset-for-video.patch \
     file://0005-media-aspeed-Fix-dram-hang-at-res-change.patch \
+    file://0006-ARM-dts-aspeed-Disable-fmc-in-asrock-paul-ipmi-card.patch \
     "

@@ -1,0 +1,33 @@
+From fcca51349877682cfa4b2c1e3a1c6e72536e56b3 Mon Sep 17 00:00:00 2001
+From: Anirudh Srinivasan <anirudhsriniv@gmail.com>
+Date: Sat, 28 Feb 2026 21:20:46 -0600
+Subject: [PATCH 6/6] ARM: dts: aspeed: Disable fmc in asrock paul ipmi card
+
+Upstream-Status: Inappropriate [for testing only]
+---
+ .../boot/dts/aspeed/aspeed-bmc-asrock-paul-ipmi-card.dts | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/arch/arm/boot/dts/aspeed/aspeed-bmc-asrock-paul-ipmi-card.dts b/arch/arm/boot/dts/aspeed/aspeed-bmc-asrock-paul-ipmi-card.dts
+index f74f8fee9e1e..7aed17602955 100644
+--- a/arch/arm/boot/dts/aspeed/aspeed-bmc-asrock-paul-ipmi-card.dts
++++ b/arch/arm/boot/dts/aspeed/aspeed-bmc-asrock-paul-ipmi-card.dts
+@@ -66,14 +66,7 @@ video_engine_memory: video {
+ };
+ 
+ &fmc {
+-	status = "okay";
+-	flash@0 {
+-		status = "okay";
+-		m25p,fast-read;
+-		label = "bmc";
+-		spi-max-frequency = <50000000>; /* 50 MHz */
+-#include "openbmc-flash-layout.dtsi"
+-	};
++	status = "disabled";
+ };
+ 
+ &gpio {
+-- 
+2.52.0
+
