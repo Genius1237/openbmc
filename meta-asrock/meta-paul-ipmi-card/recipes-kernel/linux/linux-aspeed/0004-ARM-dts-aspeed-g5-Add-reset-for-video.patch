@@ -1,0 +1,27 @@
+From fb66975ecd5e3fe160232f96c0acb62cf91cda1f Mon Sep 17 00:00:00 2001
+From: Jammy Huang <jammy_huang@aspeedtech.com>
+Date: Thu, 9 Dec 2021 16:43:23 +0800
+Subject: [PATCH 4/5] ARM: dts: aspeed-g5: Add reset for video
+
+Upstream-Status: Pending
+Change-Id: Iab85c7a615c041d4efee6d979835d2bebec0d5d6
+Signed-off-by: Jammy Huang <jammy_huang@aspeedtech.com>
+---
+ arch/arm/boot/dts/aspeed/aspeed-g5.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm/boot/dts/aspeed/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed/aspeed-g5.dtsi
+index 00950fc372ea..852c4aa8d84c 100644
+--- a/arch/arm/boot/dts/aspeed/aspeed-g5.dtsi
++++ b/arch/arm/boot/dts/aspeed/aspeed-g5.dtsi
+@@ -307,6 +307,7 @@ video: video@1e700000 {
+ 					 <&syscon ASPEED_CLK_GATE_ECLK>;
+ 				clock-names = "vclk", "eclk";
+ 				interrupts = <7>;
++				resets = <&syscon ASPEED_RESET_VIDEO>;
+ 				status = "disabled";
+ 			};
+ 
+-- 
+2.52.0
+

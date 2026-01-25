@@ -1,0 +1,30 @@
+From a299de756bd388b2f5853c590243962c92cf9960 Mon Sep 17 00:00:00 2001
+From: Jammy Huang <jammy_huang@aspeedtech.com>
+Date: Fri, 3 Oct 2025 09:58:44 +0800
+Subject: [PATCH 2/5] dt-bindings: clock: aspeed: Add VIDEO reset definition
+
+ASPEED clock controller provides a couple of resets. Add the define of
+video to allow referring to it.
+
+Upstream-Status: Backport [v7.0-rc1]
+Signed-off-by: Jammy Huang <jammy_huang@aspeedtech.com>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+---
+ include/dt-bindings/clock/aspeed-clock.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/dt-bindings/clock/aspeed-clock.h b/include/dt-bindings/clock/aspeed-clock.h
+index 06d568382c77..671e5a476eae 100644
+--- a/include/dt-bindings/clock/aspeed-clock.h
++++ b/include/dt-bindings/clock/aspeed-clock.h
+@@ -53,5 +53,6 @@
+ #define ASPEED_RESET_AHB		8
+ #define ASPEED_RESET_CRT1		9
+ #define ASPEED_RESET_HACE		10
++#define ASPEED_RESET_VIDEO		11
+ 
+ #endif
+-- 
+2.52.0
+
